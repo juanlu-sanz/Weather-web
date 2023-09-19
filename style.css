@@ -1,0 +1,102 @@
+body {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    margin: auto;
+    background-color: rgb(244, 244, 242);
+}
+
+.container-app {
+    margin: 10px auto;
+    margin-top: 70px;
+    padding: 40px;
+    border-radius: 20px;
+    width: 600px;
+    max-width: 100%;
+    background-color: rgba(187, 191, 202, 0.8);
+    border: 1px solid rgb(73, 84, 100);
+    color: rgb(73, 84, 100);
+}
+
+.search-form {
+    margin-bottom: 25px;
+}
+
+.form-control {
+    font-size: large;
+}
+
+.input-text {
+    border: 1px solid rgb(73, 84, 100);
+}
+
+.submit {
+    background-color: rgb(73, 84, 100);
+    border: 1px solid rgb(73, 84, 100);
+    color: rgb(244, 244, 242);
+    font-size: large;
+    transition: all 200ms ease-in-out;
+}
+
+.submit:hover {
+    background-color: rgb(244, 244, 242);
+    border: 1px solid rgb(244, 244, 242);
+    color: rgb(73, 84, 100);
+}
+
+.current-location {
+    margin: auto;
+    position: relative;
+    left: 50px;
+}
+
+.current-temperature {
+    text-align: center;
+}
+
+.icon-current-temperature {
+    font-size: 40px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0px;
+}
+
+p {
+    margin: 0;
+}
+
+.next-days {
+    justify-content: center;
+    margin-bottom: 0px;
+    gap: 10px;
+}
+
+.next-days .material-symbols-outlined {
+    font-size: 60px;
+    justify-content: center;
+}
+
+.col-2 {
+    padding: 5px;
+    text-align: center;
+}
+
+span+p {
+    font-size: small;
+}
+
+footer {
+    font-size: 0.65em;
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgba(73, 84, 100, 0.5);
+    color: rgb(73, 84, 100);
+    padding: 10px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-color: rgb(73, 84, 100);
+}
