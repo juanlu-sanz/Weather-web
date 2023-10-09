@@ -7,9 +7,9 @@ body {
 .container-app {
     margin: 10px auto;
     margin-top: 70px;
-    padding: 40px;
+    padding: 40px 30px;
     border-radius: 20px;
-    width: 650px;
+    width: 850px;
     max-width: 100%;
     background-color: rgba(187, 191, 202, 0.8);
     border: 1px solid rgb(73, 84, 100);
@@ -43,23 +43,37 @@ body {
 }
 
 .current-location {
+    display: block;
     margin: auto;
-    position: relative;
-    left: 50px;
+    text-align: center;
+    /* position: relative;
+    left: 40px; */
 }
 
-h1,
-h2,
+/* h1,
 h3 {
     margin: 0px;
-}
+} */
 
 p {
     padding: 0px;
+    margin: 0px;
+    display: block;
+}
+
+.smaller-font {
+    font-size: 2em;
+    padding: 0px;
+}
+
+.current-day {
+    margin: 0px;
 }
 
 .current-temperature-box {
     text-align: center;
+    display: block;
+    margin: auto;
 }
 
 #current-temperature {
@@ -85,17 +99,17 @@ p {
     display: inline;
     font-size: 1.5em;
     margin: 0px;
-} 
+}
 
 .degrees:link {
     text-decoration: none;
 }
 
-.icon-current-temperature {
+#icon-day-0 {
     font-size: 40px;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
 }
 
 .next-days {
@@ -119,7 +133,7 @@ span+p {
 }
 
 footer {
-    font-size: 0.65em;
+    font-size: 0.85em;
     text-align: center;
     margin-top: 30px;
     background-color: rgba(73, 84, 100, 0.5);
@@ -131,4 +145,12 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border-color: rgb(73, 84, 100);
+}
+
+.git-link:link {
+    color: rgb(244, 244, 242)
+}
+
+.git-link:visited {
+    color: rgb(244, 244, 242)
 }
