@@ -165,11 +165,11 @@ function handleWeatherResponse(response) {
 }
 
 function handleForeastResponse(response) {
-  let day1 = document.getElementById("day-1");
-  let day2 = document.getElementById("day-2");
-  let day3 = document.getElementById("day-3");
-  let day4 = document.getElementById("day-4");
-  let day5 = document.getElementById("day-5");
+  // let day1 = document.getElementById("day-1");
+  // let day2 = document.getElementById("day-2");
+  // let day3 = document.getElementById("day-3");
+  // let day4 = document.getElementById("day-4");
+  // let day5 = document.getElementById("day-5");
 
   let iconDay1 = document.getElementById("icon-day-1");
   let correctIconDay1 = icon[response.data.list[7].weather[0].icon];
@@ -187,14 +187,14 @@ function handleForeastResponse(response) {
   let correctIconDay5 = icon[response.data.list[39].weather[0].icon];
   iconDay5.innerText = correctIconDay5;
 
-  let temperatureDay1 = document.getElementById("temperature-day-1");
-  let maxtempDay1 = Math.round(response.data.list[7].main.temp_max);
-  let mintempDay1 = Math.round(response.data.list[7].main.temp_min);
-  temperatureDay1.innerHTML = `${maxtempDay1}ºC | ${mintempDay1}ºC`;
-  let temperatureDay2 = document.getElementById("temperature-day-2");
-  let temperatureDay3 = document.getElementById("temperature-day-3");
-  let temperatureDay4 = document.getElementById("temperature-day-4");
-  let temperatureDay5 = document.getElementById("temperature-day-5");
+  // let temperatureDay1 = document.getElementById("temperature-day-1");
+  // let maxtempDay1 = Math.round(response.data.list[7].main.temp_max);
+  // let mintempDay1 = Math.round(response.data.list[7].main.temp_min);
+  // temperatureDay1.innerHTML = `${maxtempDay1}ºC | ${mintempDay1}ºC`;
+  // let temperatureDay2 = document.getElementById("temperature-day-2");
+  // let temperatureDay3 = document.getElementById("temperature-day-3");
+  // let temperatureDay4 = document.getElementById("temperature-day-4");
+  // let temperatureDay5 = document.getElementById("temperature-day-5");
 
 
 }
@@ -212,8 +212,9 @@ function retrievePosition(event) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-
+    let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
     axios.get(url).then(handleWeatherResponse);
+    axios.get(urlForecast).then(handleForeastResponse);
   });
 }
 
