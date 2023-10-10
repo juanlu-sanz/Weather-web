@@ -147,6 +147,7 @@ function searchCity(event) {
   let units = "metric";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${citytoSearch}&units=${units}&appid=${apiKey}`;
   let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${citytoSearch}&units=${units}&appid=${apiKey}`;
+  document.getElementById("city-input").value = "";
 
   axios.get(url).then(handleWeatherResponse);
   axios.get(urlForecast).then(handleForeastResponse);
