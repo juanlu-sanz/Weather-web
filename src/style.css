@@ -121,6 +121,7 @@ p {
 .next-days .material-symbols-outlined {
     font-size: 60px;
     justify-content: center;
+    display: block;
 }
 
 .col-2 {
@@ -128,10 +129,13 @@ p {
     text-align: center;
 }
 
-span+p {
+/* span+p {
     font-size: small;
-}
+} */
 
+.temperature-day {
+    display: inline;
+}
 footer {
     font-size: 0.85em;
     text-align: center;
