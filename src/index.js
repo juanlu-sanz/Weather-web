@@ -94,15 +94,55 @@ currentDay.innerHTML = `${day} ${date} ${month} ${year}`;
 
 // When click on C or F change the temperature to celsius or fahrenheit
 
+// let temperature = document.querySelector("#current-temperature");
+// let tempNextDays = document.querySelectorAll(".temperature-day");
+// let isCelsius = true;
+
+// function toggleUnit(e) {
+//   e.preventDefault();
+//   if (isCelsius) {
+//     temperature.innerHTML = Math.round(temperature.innerHTML * 1.8 + 32);
+//     tempNextDays.forEach((temp) => {
+//       temp.innerHTML = Math.round(temp.innerHTML * 1.8 + 32);
+//     }
+//     );
+//   } else {
+//     temperature.innerHTML = Math.round((temperature.innerHTML - 32) * (5 / 9));
+//     tempNextDays.forEach((temp) => {
+//       temp.innerHTML = Math.round((temp.innerHTML - 32) * (5 / 9));
+//     }
+//     );
+//   }
+//   isCelsius = !isCelsius;
+
+//   let currentSelectedUnit = document.getElementById("currently-selected-unit");
+//   let secondaryUnit = document.getElementById("secondary-unit");
+//   var temp = currentSelectedUnit.innerHTML;
+//   currentSelectedUnit.innerHTML = secondaryUnit.innerHTML;
+//   secondaryUnit.innerHTML = temp;
+// }
+
 let temperature = document.querySelector("#current-temperature");
+let tempNextDays = document.querySelectorAll(".temperature-day");
 let isCelsius = true;
 
 function toggleUnit(e) {
   e.preventDefault();
   if (isCelsius) {
     temperature.innerHTML = Math.round(temperature.innerHTML * 1.8 + 32);
+    // We need a foreach because tempNextDays is a NodeList, meaning it's an array of elements
+    tempNextDays.forEach(function (tempDay) {
+      let tempInCelsius = parseInt(tempDay.innerHTML);
+      let tempInFahrenheit = Math.round(tempInCelsius * 1.8 + 32);
+      tempDay.innerHTML = `${tempInFahrenheit}º`;
+    });
   } else {
     temperature.innerHTML = Math.round((temperature.innerHTML - 32) * (5 / 9));
+    tempNextDays.forEach(function (tempDay) {
+      let tempInFahrenheit = parseInt(tempDay.innerHTML);
+      let tempInCelsius = Math.round((tempInFahrenheit - 32) * (5 / 9));
+      tempDay.innerHTML = `${tempInCelsius}º`;
+    });
   }
   isCelsius = !isCelsius;
 
@@ -112,7 +152,6 @@ function toggleUnit(e) {
   currentSelectedUnit.innerHTML = secondaryUnit.innerHTML;
   secondaryUnit.innerHTML = temp;
 }
-
 let secondaryUnit = document.getElementById("secondary-unit");
 secondaryUnit.addEventListener("click", toggleUnit);
 
@@ -147,8 +186,8 @@ function searchCity(event) {
   let units = "metric";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${citytoSearch}&units=${units}&appid=${apiKey}`;
   let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${citytoSearch}&units=${units}&appid=${apiKey}`;
-  document.getElementById("city-input").value = "";
 
+  document.getElementById("city-input").value = "";
   axios.get(url).then(handleWeatherResponse);
   axios.get(urlForecast).then(handleForeastResponse);
 }
@@ -196,13 +235,10 @@ function handleForeastResponse(response) {
   // let temperatureDay3 = document.getElementById("temperature-day-3");
   // let temperatureDay4 = document.getElementById("temperature-day-4");
   // let temperatureDay5 = document.getElementById("temperature-day-5");
-
-
 }
 
 let searchForm = document.getElementById("form");
 searchForm.addEventListener("submit", searchCity);
-
 
 // My location button: Getting the weather from the current location
 function retrievePosition(event) {
