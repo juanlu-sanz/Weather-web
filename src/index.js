@@ -129,10 +129,15 @@ let icon = {
   "04d": "filter_drama",
   "04n": "filter_drama",
   "09d": "rainy_heavy",
+  "09n": "rainy_heavy",
   "10d": "rainy_light",
+  "10n": "rainy_light",
   "11d": "thunderstorm",
+  "11n": "thunderstorm",
   "13d": "ac_unit",
+  "13n": "ac_unit",
   "50d": "foggy",
+  "50n": "foggy",
 };
 
 function searchCity(event) {
