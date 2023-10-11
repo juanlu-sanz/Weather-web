@@ -55,7 +55,7 @@ searchForm.addEventListener("submit", changeCity);
 let currentTime = new Date();
 let hour = currentTime.getHours();
 let minutes = currentTime.getMinutes();
-let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+let formattedMinutes = minutes.padStart(2, '0');
 
 let daysOfTheWeek = [
   "Sunday",
